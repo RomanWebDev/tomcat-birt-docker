@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  birt:
+    build: ./birt
+    volumes:
+      - ${TOMCAT_BIN}:/usr/local/tomcat/bin
+      - ${TOMCAT_CONFIGS}:/usr/local/tomcat/conf
+      - ${BIRT_REPORTS}:/usr/local/tomcat/webapps/birt-viewer/report
+    working_dir: /usr/local/tomcat
+    ports:
+      - 80:8080
