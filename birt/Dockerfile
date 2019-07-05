@@ -25,4 +25,7 @@ RUN apt-get update \
     && mv tmp.xml context.xml \
     && cd $CATALINA_HOME/webapps/host-manager/META-INF \
     && xmlstarlet ed -d "//Valve" context.xml > tmp.xml \
-    && mv tmp.xml context.xml
+    && mv tmp.xml context.xml \
+    # Remove unused webapps from tomcat
+    && cd $CATALINA_HOME/webapps/ \ 
+    && rm -r examples && rm -r docs && rm -r ROOT
