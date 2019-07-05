@@ -6,7 +6,7 @@ This repo contains Dockerfile for Appache Tomcat 8.5.42 + BIRT Report Viewer 4.8
 - Birt path: birt-viewer (http://yourmachine/birt-viewer)
 - Deleted tomcat webapps: ROOT, examples, docs
 ## Configuration
-- In **.env** file you can change mounе paths for: tomcat/bin, tomcat/conf, birt-viewer/report
+- In **.env** file you can change mount paths for: tomcat/bin, tomcat/conf, birt-viewer/report
   ```
   #PATHS
   # Tomcat configuration folders
