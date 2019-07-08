@@ -23,11 +23,14 @@ romanzubov
   ports:
         - 80:8080
   ```
-- In **birt/tomcat_configuration/bin/setenv.sh** you can change java virtual machine settings. For example:
+- In **docker-compose.yml** you can change java virtual machine settings. For example:
   ```
-  export CATALINA_OPTS="$CATALINA_OPTS -Xms512m"
-  export CATALINA_OPTS="$CATALINA_OPTS -Xmx8192m"
-  export CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=256m"
+  environment:
+    JAVA_OPTS: "
+      -Xms512m
+      -Xmx4096m
+      -XX:MaxPermSize=256m
+      -server"
   ```
   
 ## Build and Run
