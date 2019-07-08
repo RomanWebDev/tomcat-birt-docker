@@ -3,8 +3,13 @@ version: '3.1'
 services:
   birt:
     build: ./birt
+  environment:
+    JAVA_OPTS: "
+      -Xms512m
+      -Xmx4096m
+      -XX:MaxPermSize=256m
+      -server"
     volumes:
-      - ${TOMCAT_BIN}:/usr/local/tomcat/bin
       - ${TOMCAT_CONFIGS}:/usr/local/tomcat/conf
       - ${BIRT_REPORTS}:/usr/local/tomcat/webapps/birt-viewer/report
     working_dir: /usr/local/tomcat
